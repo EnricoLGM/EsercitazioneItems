@@ -2,8 +2,10 @@ package com.example.esercitazioneitems;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -32,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //onitamclicklistner da utilizzare sulla lista
-        //listaFilm.setOnItemClickListener(new View.OnClickListener());
+        listaFilm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String titolo=(String)listaFilm.getItemAtPosition(position);
+                Toast.makeText(getApplicationContext(), titolo, Toast.LENGTH_LONG).show();
+                //istanzia l'activity e la avvia
+                Intent i=new Intent(getApplicationContext(), FilmInfo.class);
+                i.putExtra("title", titolo);
+                startActivity(i);
+            }
+        });
     }
 }
