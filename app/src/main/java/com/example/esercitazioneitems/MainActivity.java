@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Stai per uscire", Toast.LENGTH_LONG).show();
+                Intent i=new Intent(getApplicationContext(), Start.class);
+                startActivity(i);
             }
         });
         //onitamclicklistner da utilizzare sulla lista
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i=new Intent(getApplicationContext(), FilmInfo.class);
                 i.putExtra("title", titolo);
                 startActivity(i);
+                Log.d("click", "prova " + titolo);
             }
         });
     }
