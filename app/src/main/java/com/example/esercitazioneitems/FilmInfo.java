@@ -3,6 +3,8 @@ package com.example.esercitazioneitems;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -22,5 +24,7 @@ public class FilmInfo extends AppCompatActivity {
         String title = i.getStringExtra("title");
         titolo.setText(title);
         copertina=(ImageView)findViewById(R.id.copertina);
+        //Bitmap myBitmap = BitmapFactory.decodeFile("main/res/drawable-v24/img.jpg");
+        //copertina.setImageBitmap(myBitmap);
     }
 }
