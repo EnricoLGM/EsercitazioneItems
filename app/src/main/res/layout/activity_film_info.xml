@@ -10,25 +10,29 @@
         android:id="@+id/titolo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="44dp"
         android:text="TextView"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/copertina"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <ImageView
         android:id="@+id/copertina"
-        android:layout_width="204dp"
-        android:layout_height="389dp"
+        android:layout_width="128dp"
+        android:layout_height="195dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698"
-        app:srcCompat="@drawable/img"
-        tools:srcCompat="@drawable/img" />
+        app:layout_constraintVertical_bias="0.095"
+        app:srcCompat="@drawable/deathloop"
+        tools:srcCompat="@drawable/deathloop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

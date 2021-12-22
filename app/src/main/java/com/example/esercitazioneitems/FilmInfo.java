@@ -23,8 +23,8 @@ public class FilmInfo extends AppCompatActivity {
         Intent i = getIntent();
         String title = i.getStringExtra("title");
         titolo.setText(title);
+        int id = i.getIntExtra("id", 0);
         copertina=(ImageView)findViewById(R.id.copertina);
-        //Bitmap myBitmap = BitmapFactory.decodeFile("main/res/drawable-v24/img.jpg");
-        //copertina.setImageBitmap(myBitmap);
+        copertina.setImageResource(id);
     }
 }

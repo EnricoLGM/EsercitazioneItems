@@ -12,11 +12,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.sql.Array;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    String film[]={"Spiderman", "Titanic", "Balle spaziali"};
+    String film[]={"Spiderman", "Titanic", "La Forma della Voce", "Deathloop", "Dishonored", "Prey"};
+    Integer img[]={R.drawable.spiderman, R.drawable.titanic, R.drawable.laformadellavoce, R.drawable.deathloop, R.drawable.dishonored, R.drawable.prey};
     ListView listaFilm;
     Button bottoneEsci;
 
@@ -32,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Stai per uscire", Toast.LENGTH_LONG).show();
-                Intent i=new Intent(getApplicationContext(), Start.class);
-                startActivity(i);
+                finish();
+                //Intent i=new Intent(getApplicationContext(), Start.class);
+                //startActivity(i);
             }
         });
         //onitamclicklistner da utilizzare sulla lista
@@ -41,12 +45,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String titolo=(String)listaFilm.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(), titolo, Toast.LENGTH_LONG).show();
+                int idimg=img[position];
+                //Toast.makeText(getApplicationContext(), titolo, Toast.LENGTH_LONG).show();
                 //istanzia l'activity e la avvia
                 Intent i=new Intent(getApplicationContext(), FilmInfo.class);
                 i.putExtra("title", titolo);
+                i.putExtra("id", idimg);
                 startActivity(i);
-                Log.d("click", "prova " + titolo);
+                Log.d("click", "title " + titolo);
             }
         });
     }
